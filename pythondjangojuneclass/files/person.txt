@@ -1,0 +1,6 @@
+100,anish,27,developer,4,42000
+101,anu,33,developer,12,60000
+102,ragesh,35,manager,12,80000
+103,amal,26,accountant,3,30000
+104,jishnu,29,officer,6,50000
+105,bijeesh,37,offier,8,60000

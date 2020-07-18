@@ -1,0 +1,1 @@
+<re.Match object; span=(0, 26), match='abhijithsoman002@gmail.com'>
