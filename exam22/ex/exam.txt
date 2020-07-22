@@ -1,0 +1,110 @@
+
+mysql> use luminar;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_luminar |
++-------------------+
+| emp               |
+| emplo             |
+| movie             |
+| stdnt             |
++-------------------+
+4 rows in set (0.40 sec)
+
+mysql> create table employ(eid varchar(10),ename varchar(20),edsgn  varchar(30),mailid varchar(50),salary varchar(50));
+Query OK, 0 rows affected (0.96 sec)
+
+mysql> LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\employee.csv' INTO TABLE employ FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+Query OK, 4 rows affected (0.13 sec)
+Records: 4  Deleted: 0  Skipped: 0  Warnings: 0
+
+mysql> select * from employ;
++------+-------+-----------+-----------------+--------+
+| eid  | ename | edsgn     | mailid          | salary |
++------+-------+-----------+-----------------+--------+
+ |100  | jhon  | testing   | jhone@gmail.com | 15000
+ |101  | ann   | devoloper | ann@gmail.com   | 16000
+ |102  | tom   | testing   | tom@gmail.com   | 15000
+ |103  | danie | testing   | danie@gmail     | 25000
++------+-------+-----------+-----------------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select count(edsgn) from employ;
++--------------+
+| count(edsgn) |
++--------------+
+|            4 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from employ group by edsgn;
++----------+
+| count(*) |
++----------+
+|        3 |
+|        1 |
++----------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
