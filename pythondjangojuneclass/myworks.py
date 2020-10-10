@@ -18,12 +18,13 @@
 #     return sorted(tuple,key=list)
 # print(srtlst([(2,5),(1,2),(4,4),(2,3),(2,1)]))
 
-# a=[2,8,6,3,9,8,5,1,2,3]
-# dpitem=set()
-# unqitem=[]
-# for i in a:
-#     if i not in dpitem:
-#        # unqitem.append(i)
-#         dpitem.add(i)
-# print(dpitem)
+a=[2,8,6,3,9,8,5,1,2,3]
+dpitem=set()
+unqitem=[]
+for i in a:
+    if i not in dpitem:
+        unqitem.append(i)
+        dpitem.add(i)
+print(dpitem)
+print(unqitem)
 

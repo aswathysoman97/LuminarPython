@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "resume/base.html" %}
+    {% block body_block %}
+{% load static %}
+<div class="container">
+    <div class="row">
+         <h1>CREATE YOUR RESUME</h1>
+    </div>
+<div class="col-3">
+<a href="{%url 'createresume' %}">create</a>
+    </div>
+    <div class="row">
+
+    <div class="col-3"></div>
+    <div class="col-3">
+<img src="{%static "image/img.jpg" %}" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+</div>
+{% endblock %}

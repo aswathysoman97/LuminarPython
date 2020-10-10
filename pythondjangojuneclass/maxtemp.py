@@ -1,4 +1,4 @@
- f=open("C:/Users/chakkara/PycharmProjects/pythondjangojuneclass/data.csv","r")
+f=open("C:/Users/chakkara/PycharmProjects/pythondjangojuneclass/data.csv","r")
 dict={}
 for data in f:
     value=data.rstrip("\n").split(",")
