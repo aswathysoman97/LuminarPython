@@ -2,14 +2,15 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from resume.forms import createForm,RegistrationForm,resumeViewForm,resumedetailsForm,resumeEditForm,resumeDeleteForm
+from resume.forms import createForm, RegistrationForm, resumeViewForm, resumeEditForm, resumeDeleteForm, \
+    resumepublicForm
 from resume.models import Create
 
 @login_required(login_url='loginPage')
 def index(request):
     return render(request,"resume/index.html")
-def resumeCreate(request):
-    form=createForm()
+def resumeCreate(request,pk):
+    form=createForm(initial={'uid':pk,"user":request.user})
     context={}
     context['form']=form
     qs=Create.objects.all()
@@ -48,9 +49,11 @@ def loginPage(request):
         else:
             return redirect("loginPage")
     return render(request,'resume/login.html')
+
 def logoutpage(request):
     logout(request)
     return redirect("loginPage")
+
 def resumeview(request,pk):
     qs=Create.objects.get(id=pk)
     context={}
@@ -83,3 +86,18 @@ def resumeDelete(request,pk):
 
             return redirect("createresume")
     return render(request,"resume/resumedelete.html",context)
+
+def viewresume(request):
+    obj=Create.objects.filter(user=request.user)
+    context={}
+    context['obj']=obj
+    return render(request,"resume/resumepublic.html", context)
+
+def resumedetails(request,pk):
+    qs =Create.objects.get(id=pk)
+    context = {}
+    context['obj'] = qs
+    return render(request,"resume/publicview.html",context)
+
+def home(request):
+    return render(request,"resume/home.html")

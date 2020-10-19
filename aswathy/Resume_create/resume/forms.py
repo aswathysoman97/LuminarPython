@@ -23,3 +23,7 @@ class resumeDeleteForm(ModelForm):
     class Meta:
         model=Create
         fields="__all__"
+class resumepublicForm(ModelForm):
+    class Meta:
+        model=Create
+        fields="__all__"

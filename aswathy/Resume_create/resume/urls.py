@@ -16,15 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.shortcuts import render
-from resume.views import resumeCreate,Register,logoutpage,resumedetails,resumeview,index,resumeEdit,resumeDelete
+from resume.views import resumeCreate,Register,logoutpage,viewresume,index,home,resumeEdit,resumeDelete,loginPage,resumedetails,resumeview
 urlpatterns = [
     path('index', index, name='index'),
-    path('resumeCreate',resumeCreate,name='createresume'),
+    path('resumeCreate/<int:pk>',resumeCreate,name='createresume'),
     path('Register',Register,name='Register'),
     path('logoutpage',logoutpage,name='logoutpage'),
     path('resumeview/<int:pk>',resumeview,name='resumeview'),
-    path('resumedetails',resumedetails, name='resumedetails'),
-    path("",lambda request:render(request,"resume/base.html")),
+    path('home',home,name='home'),
+    path("",lambda request:render(request,"resume/homebase.html")),
     path('resumeEdit/<int:pk>', resumeEdit, name='resumeEdit'),
     path('resumeDelete/<int:pk>',resumeDelete, name='resumeDelete'),
+    path("loginPage", loginPage, name='loginPage'),
+    path('viewresume',viewresume, name='viewresume'),
+    path('resumedetails/<int:pk>',resumedetails,name='resumedetails'),
 ]

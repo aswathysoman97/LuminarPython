@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "resume/base.html" %}
+    {% block body_block %}
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="edit">
+    <input type="submit" class="btn btn-primary" value="edit">
 </form>
-</body>
-</html>
+{% endblock %}
